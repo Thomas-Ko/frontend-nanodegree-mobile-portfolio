@@ -526,7 +526,10 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < 31; i++) {
+    /* I changed the number from 200 to 31 to not have the loop run so many times.
+    The only downside to this is that the page will look off for people who like to zoom 
+    out their webpages to 50% (which is pretty much maybe 1 or two oddballs)  */
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
