@@ -470,8 +470,11 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
+
+var pizzasDiv = document.getElementById("randomPizzas");
+//this var was originally inside the below for-loop
+
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -529,7 +532,7 @@ document.addEventListener('DOMContentLoaded', function() {
   for (var i = 0; i < 31; i++) {
     /* I changed the number from 200 to 31 to not have the loop run so many times.
     The only downside to this is that the page will look off for people who like to zoom 
-    out their webpages to 50% (which is pretty much maybe 1 or two oddballs)  */
+    out their webpages to 50% (which is pretty much maybe 1 or two oddballs )  */
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
