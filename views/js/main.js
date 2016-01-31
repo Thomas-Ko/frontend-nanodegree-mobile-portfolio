@@ -403,16 +403,22 @@ var resizePizzas = function(size) {
   window.performance.mark("mark_start_resize");   // User Timing API function
 
   // Changes the value for the size of the pizza above the slider
+  
+
+  var pizzaSize = document.querySelector("#pizzaSize").innerHTML;
+  /*I set this variable called pizzaSize so we didn't need to traverse the dom
+  each time I moved the slider*/
+  
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
-        document.querySelector("#pizzaSize").innerHTML = "Small";
+        pizzaSize = "Small";
         return;
       case "2":
-        document.querySelector("#pizzaSize").innerHTML = "Medium";
+        pizzaSize = "Medium";
         return;
       case "3":
-        document.querySelector("#pizzaSize").innerHTML = "Large";
+        pizzaSize = "Large";
         return;
       default:
         console.log("bug in changeSliderLabel");
