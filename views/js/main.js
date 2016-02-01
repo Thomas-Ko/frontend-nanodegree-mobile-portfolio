@@ -549,8 +549,8 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
 
     elem.style.willChange = "transform";
-    //elem.style.transform= "translatez(0)";
-    //I added elem.style.willChange to put these pizzas in their own layer
+    //elem.style.transform= "translateZ(0)";
+    //I added elem.style.willChange to put these pizzas in their own layer. I could've done transform= "translateZ(0) as well"
 
     document.getElementById("movingPizzas1").appendChild(elem);
   }
