@@ -16,4 +16,8 @@ _______________________________________________
 
 - In the changeSliderLabel function, I set a variable called pizzaSize and set it to document.querySelector("#pizzaSize").innerHTML so I wouldn't need to traverse the DOM each time I moved the slider.
 
-- In the last for-loop, I changed the number of times the loop happens from 200 to 31.
+- In the last for-loop, I changed the number of times the loop happens from 200 to 31. 
+
+- I put var pizzasDiv outside of for-loop, which handled a dom manipulation
+
+- Again, I put a calculation outside of a for-loop in (this time it was in the updatePositions function) so it didn't need to run each time it looped.

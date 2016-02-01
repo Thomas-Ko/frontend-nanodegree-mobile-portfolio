@@ -472,7 +472,7 @@ window.performance.mark("mark_start_generating"); // collect timing data
 // This for-loop actually creates and appends all of the pizzas when the page loads
 
 var pizzasDiv = document.getElementById("randomPizzas");
-//this var was originally inside the below for-loop
+//this var was originally inside the for-loop below 
 
 for (var i = 2; i < 100; i++) {
   pizzasDiv.appendChild(pizzaElementGenerator(i));
@@ -507,8 +507,14 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
+
+  var calculation = (document.body.scrollTop / 1250);
+  /*I put this outside of the for-loop so it doesn't get calculated each time 
+  the loop runs. Stylistically, I think removing the (i % 5) would make the page look
+  nicer, but since it doesn't really ruin performance, I kept it there*/
+  
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    var phase = Math.sin(calculation + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
