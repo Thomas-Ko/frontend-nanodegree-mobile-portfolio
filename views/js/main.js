@@ -405,7 +405,7 @@ var resizePizzas = function(size) {
   // Changes the value for the size of the pizza above the slider
   
 
-  var pizzaSize = document.querySelector("#pizzaSize").innerHTML;
+  var pizzaSize = document.getElementById("pizzaSize").innerHTML;
   /*I set this variable called pizzaSize so we didn't need to traverse the dom
   each time I moved the slider*/
   
@@ -450,7 +450,7 @@ var resizePizzas = function(size) {
   better that I went through the dom once and set that to one variable, so in the
   for-loop, it doesn't need to query the dom all those times*/
   
-    var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
+    var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
 
     for (var i = 0; i < randomPizzas.length; i++) {
       randomPizzas[i].style.width = newWidth + "%";
@@ -506,13 +506,12 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover');
+  var items = document.getElementsByClassName('mover');
 
   var calculation = (document.body.scrollTop / 1250);
   /*I put this outside of the for-loop so it doesn't get calculated each time 
   the loop runs. Stylistically, I think removing the (i % 5) would make the page look
   nicer, but since it doesn't really ruin performance, I kept it there*/
-  
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin(calculation + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
@@ -546,7 +545,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    document.getElementById("movingPizzas1").appendChild(elem);
   }
   updatePositions();
 });
