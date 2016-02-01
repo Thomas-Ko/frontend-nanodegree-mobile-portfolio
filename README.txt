@@ -23,3 +23,5 @@ _______________________________________________
 - Again, I put a calculation outside of a for-loop in (this time it was in the updatePositions function) so it didn't need to run each time it looped.
 
 - Instead of using querySelector, I used getElementsByClassName or getElementById. I had some trouble here the first time I did it because while I replaced one querySelectorAll with say getElementById, I forgot to remove the # within the parenthesis.
+
+- I added the will-change property when creating the pizzas to put them in their own layer. No green paint flashing here!

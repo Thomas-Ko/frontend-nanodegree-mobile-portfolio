@@ -515,6 +515,8 @@ function updatePositions() {
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin(calculation + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    //items[i].style.transform = 'translateX(' + (items[i].basicLeft + 100 * phase) + 'px)';
+
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -545,6 +547,11 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
+
+    elem.style.willChange = "transform";
+    //elem.style.transform= "translatez(0)";
+    //I added elem.style.willChange to put these pizzas in their own layer
+
     document.getElementById("movingPizzas1").appendChild(elem);
   }
   updatePositions();
